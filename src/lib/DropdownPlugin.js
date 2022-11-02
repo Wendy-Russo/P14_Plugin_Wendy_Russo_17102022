@@ -1,5 +1,4 @@
-import { useState } from "react";
-import React from 'react';
+import React,{ useState } from "react";
 
 function DropdownPlugin(props){
 
@@ -18,9 +17,9 @@ function DropdownPlugin(props){
         array.map(
           (elem,id) =>
           <li key={id} className="list-group-item">
-            <a onClick={(e) => handleSelect(e)} href="#" id={"dropdown-option-"+id} className="list-group-item text-dark text-center border-top p-2 d-flex">
+            <button onClick={(e) => handleSelect(e)} id={"dropdown-option-"+id} className="list-group-item text-dark text-center border-top p-2 d-flex">
               {elem}
-            </a>
+            </button>
           </li>
         )
       )

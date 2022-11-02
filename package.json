@@ -1,9 +1,14 @@
 {
   "name": "@wendy-russo/simple-react-dropdown",
-  "version": "0.1.1",
+  "version": "0.1.6",
   "private": false,
+  "main": "dist/DropdownPlugin.js",
+  "module": "dist/DropdownPlugin.js",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
-    "@babel/polyfill": "^7.12.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -40,6 +45,7 @@
     "@babel/cli": "^7.19.3",
     "@babel/core": "^7.19.6",
     "@babel/preset-env": "^7.19.4",
-    "babel-cli": "^6.26.0"
+    "babel-loader": "^9.0.0",
+    "webpack": "^5.74.0"
   }
 }
