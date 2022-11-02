@@ -17,7 +17,7 @@ function DropdownPlugin(props){
         array.map(
           (elem,id) =>
           <li key={id} className="list-group-item">
-            <button onClick={(e) => handleSelect(e)} id={"dropdown-option-"+id} className="list-group-item text-dark text-center border-top p-2 d-flex">
+            <button type="button" onClick={(e) => handleSelect(e)} id={"dropdown-option-"+id} className=" w-100 list-group-item text-dark text-center border-top p-2 d-flex">
               {elem}
             </button>
           </li>
