@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import iconUP from "./icons/caret-up-solid.svg";
+import iconDOWN from "./icons/caret-down-solid.svg";
 function DropdownPlugin(props) {
   const OPTIONS = props.options;
   const DEFAULT_VALUE = props.defaultValue;
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [valueID, updateValueID] = useState(0);
   const [value, updateValue] = useState(props.defaultValue);
-  const iconClass = "fa-solid ms-2" + (isDropdownOpen ? " fa-caret-up" : " fa-caret-down");
+  const icon = isDropdownOpen ? iconUP : iconDOWN;
   const listClass = "dropdown-options bg-white list-decoration-none p-0 m-0" + (isDropdownOpen ? "" : " d-none");
   function makeOptions(array) {
     if (OPTIONS) {
@@ -13,9 +15,10 @@ function DropdownPlugin(props) {
         key: id,
         className: "list-group-item"
       }, /*#__PURE__*/React.createElement("button", {
+        type: "button",
         onClick: e => handleSelect(e),
         id: "dropdown-option-" + id,
-        className: "list-group-item text-dark text-center border-top p-2 d-flex"
+        className: " w-100 list-group-item text-dark text-center border-top p-2 d-flex"
       }, elem)));
     } else {
       console.log("Please use the 'options' prop to pass down options");
@@ -51,8 +54,10 @@ function DropdownPlugin(props) {
     className: "ms-0 w-100 dropdown-button border-0 bg-transparent me-auto d-flex justify-content-between align-items-center p-2"
   }, /*#__PURE__*/React.createElement("span", {
     className: ""
-  }, value), /*#__PURE__*/React.createElement("i", {
-    className: iconClass
+  }, value), /*#__PURE__*/React.createElement("img", {
+    alt: "open or close icon",
+    src: icon,
+    height: "24px"
   }))), /*#__PURE__*/React.createElement("ul", {
     className: listClass
   }, makeOptions(OPTIONS)));

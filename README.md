@@ -1,6 +1,5 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Visit the GitHub !
+[https://github.com/Wendy-Russo/P14_Plugin_Wendy_Russo_17102022]
 
 ## Available Scripts
 

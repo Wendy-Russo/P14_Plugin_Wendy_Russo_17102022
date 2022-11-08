@@ -1,5 +1,6 @@
 import React,{ useState } from "react";
-
+import iconUP from "./icons/caret-up-solid.svg"
+import iconDOWN from "./icons/caret-down-solid.svg"
 function DropdownPlugin(props){
 
   const OPTIONS = props.options;
@@ -8,7 +9,7 @@ function DropdownPlugin(props){
   const [valueID, updateValueID] = useState(0);
   const [value, updateValue] = useState(props.defaultValue);
 
-  const iconClass = "fa-solid ms-2" +( isDropdownOpen ? " fa-caret-up" : " fa-caret-down" );
+  const icon = ( isDropdownOpen ? iconUP : iconDOWN );
   const listClass = "dropdown-options bg-white list-decoration-none p-0 m-0" +( isDropdownOpen ? "" : " d-none" );
 
   function makeOptions(array){
@@ -68,8 +69,9 @@ function DropdownPlugin(props){
           <span className="">
             {value}
           </span>
-          <i className={iconClass}>
-          </i>
+
+          <img alt="open or close icon" src={icon} height="24px" />
+
         </button>
         
       </div>

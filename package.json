@@ -1,10 +1,16 @@
 {
   "name": "@wendy-russo/simple-react-dropdown",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": false,
   "main": "dist/DropdownPlugin.js",
   "module": "dist/DropdownPlugin.js",
   "license": "MIT",
+  "description": "A lightweight ReactJs dropdown plugin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Wendy-Russo/P14_Plugin_Wendy_Russo_17102022/"
+  },
+  "author": "Wendy Russo",
   "files": [
     "dist"
   ],
