@@ -1,6 +1,8 @@
 # Visit the GitHub !
 [https://github.com/Wendy-Russo/P14_Plugin_Wendy_Russo_17102022]
 
+# Visit the NPM page !
+[https://www.npmjs.com/package/@wendy-russo/simple-react-dropdown]
 ## Available Scripts
 
 In the project directory, you can run:
