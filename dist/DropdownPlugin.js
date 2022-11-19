@@ -6,7 +6,8 @@ function DropdownPlugin(props) {
   const DEFAULT_VALUE = props.defaultValue;
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [valueID, updateValueID] = useState(0);
-  const [value, updateValue] = useState(props.defaultValue);
+  const [value, updateValue] = useState("");
+  const [displayValue, updateDisplayValue] = useState(props.defaultValue);
   const icon = isDropdownOpen ? iconUP : iconDOWN;
   const listClass = "dropdown-options bg-white list-decoration-none p-0 m-0" + (isDropdownOpen ? "" : " d-none");
   function makeOptions(array) {
@@ -27,6 +28,7 @@ function DropdownPlugin(props) {
   function handleSelect(e) {
     updateValue(e.target.innerHTML);
     toggleDropdown();
+    updateDisplayValue(e.target.innerHTML);
   }
   function toggleDropdown() {
     setIsDropdownOpen(!isDropdownOpen);
@@ -38,6 +40,7 @@ function DropdownPlugin(props) {
     SCROLL_AMOUNT > 0 && (newValueID = Math.max(0, valueID - 1));
     SCROLL_AMOUNT < 0 && (newValueID = Math.min(OPTIONS.length - 1, valueID + 1));
     updateValue(OPTIONS[newValueID]);
+    updateDisplayValue(OPTIONS[newValueID]);
     updateValueID(newValueID);
   }
   return /*#__PURE__*/React.createElement("div", {
@@ -54,7 +57,7 @@ function DropdownPlugin(props) {
     className: "ms-0 w-100 dropdown-button border-0 bg-transparent me-auto d-flex justify-content-between align-items-center p-2"
   }, /*#__PURE__*/React.createElement("span", {
     className: ""
-  }, value), /*#__PURE__*/React.createElement("img", {
+  }, displayValue), /*#__PURE__*/React.createElement("img", {
     alt: "open or close icon",
     src: icon,
     height: "24px"
